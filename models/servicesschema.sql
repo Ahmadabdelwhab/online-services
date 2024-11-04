@@ -86,15 +86,15 @@ CREATE TABLE `parts` (
 -- Table structure for table `reservations`
 --
 
-CREATE TABLE `reservations` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) DEFAULT NULL,
-  `service_id` int(11) DEFAULT NULL,
-  `status` enum('pending','accepted','declined','completed') DEFAULT 'pending',
-  `appointment_date` datetime DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  CREATE TABLE `reservations` (
+    `id` int(11) NOT NULL,
+    `user_id` int(11) DEFAULT NULL,
+    `service_id` int(11) DEFAULT NULL,
+    `status` enum('pending','accepted','declined','completed') DEFAULT 'pending',
+    `appointment_date` datetime DEFAULT NULL,
+    `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+    `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 

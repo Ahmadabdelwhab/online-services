@@ -1,8 +1,6 @@
-
 const fs = require('fs');
 const path = require('path');
 const pool = require('../config/db');
-const e = require('express');
 exports.getUsers = async (req, res) => {
     const { page = 1, limit = 10, search = '' } = req.query;
 
@@ -15,7 +13,7 @@ exports.getUsers = async (req, res) => {
             `SELECT id ,first_name , last_name , email , role , phone_number , image_url FROM users 
             WHERE first_name LIKE ? OR last_name LIKE ? OR email LIKE ? 
             LIMIT ? OFFSET ?`,
-            [`%${search}%`, `%${search}%`, `%${search}%`, parseInt(limit), offset]
+            [`%${search}%`, `%${search}%`, `%${search}%`, parseInt(limit), offset] 
         );
 
         // Get total count for pagination

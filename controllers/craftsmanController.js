@@ -1,6 +1,7 @@
 
 const bcrypt = require('bcrypt');
 const pool = require('../config/db');
+const { get, post, put } = require('../routes/authroutes');
 
 exports.createCraftsman = async (req, res) => {
     try {
@@ -100,3 +101,12 @@ exports.deleteCraftsman = async (req, res) => {
         res.status(500).json({ message: "Error deleting craftsman", error });
     }
 }
+
+
+
+
+
+
+
+
+

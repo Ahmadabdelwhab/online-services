@@ -23,12 +23,14 @@ const authRoutes = require('./routes/authroutes');
 const userRoutes = require('./routes/userroutes');
 const craftsmanRoutes = require('./routes/craftsmanroutes');
 const servicesRoutes = require('./routes/servicesRoutes');
+const reservationRoutes = require('./routes/reservationRoutes');
 
 //use routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/craftsmen', craftsmanRoutes);
-app.use('/api', servicesRoutes);
+app.use('/api/', servicesRoutes);
+app.use('/api/', reservationRoutes);
 
 //use the upload file as static
 
